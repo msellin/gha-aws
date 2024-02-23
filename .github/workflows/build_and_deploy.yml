@@ -1,0 +1,19 @@
+name: Build & deploy
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+
+jobs:
+  build_backend:
+    name: Build backend
+    uses: ./.github/workflows/build.yml
+
+  build_docker:
+    name: Build docker
+    needs: [ build_backend ]
+    uses: ./.github/workflows/publish.yml

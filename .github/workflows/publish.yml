@@ -10,11 +10,7 @@
 name: Publish Docker image
 
 on:
-  workflow_run:
-    workflows:
-      - Build and run tests
-    types:
-      - completed
+  workflow_call:
 
 jobs:
   push_to_registry:
