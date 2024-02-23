@@ -29,3 +29,13 @@ jobs:
 
     - name: Run tests
       run: ./gradlew test
+
+    - name: Set archive name
+      run: |
+        echo "gh_build_archive_name=$( echo ${{ github.event.repository.name }}-${{ github.run_number }} | sed 's/\//-/' )" >> "$GITHUB_ENV"
+
+    - name: Upload build archive
+      uses: actions/upload-artifact@v3
+      with:
+        name: gha-aws.jar
+        path: /
