@@ -10,8 +10,11 @@
 name: Publish Docker image
 
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows:
+      - Build and run tests
+    types:
+      - completed
 
 jobs:
   push_to_registry:
