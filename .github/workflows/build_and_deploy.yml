@@ -8,8 +8,10 @@ jobs:
   build_backend:
     name: Build backend
     uses: ./.github/workflows/build.yml
+    secrets: inherit
 
   build_docker:
     name: Build docker
     needs: [ build_backend ]
     uses: ./.github/workflows/publish.yml
+    secrets: inherit
