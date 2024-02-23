@@ -25,4 +25,3 @@ jobs:
         with:
           push: true
           tags: margussellin/gha-aws:${{ env.gh_build_archive_name }}
-          labels: ${{ steps.meta.outputs.labels }}
