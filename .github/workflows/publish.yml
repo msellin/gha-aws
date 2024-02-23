@@ -11,7 +11,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: gha-aws.jar
+          name: ${{ env.gh_build_archive_name }}
           path: artifacts
 
       - name: Log in to Docker Hub
