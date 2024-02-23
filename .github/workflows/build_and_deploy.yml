@@ -4,10 +4,6 @@ on:
   push:
     branches: [ "main" ]
 
-env:
-  ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-  ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
-
 jobs:
   build_backend:
     name: Build backend
