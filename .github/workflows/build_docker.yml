@@ -1,11 +1,10 @@
-name: Publish Docker image
+name: Build and push Docker image
 
 on:
   workflow_call:
 
 jobs:
   push_to_registry:
-    name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifacts

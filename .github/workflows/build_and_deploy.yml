@@ -6,12 +6,12 @@ on:
 
 jobs:
   build_backend:
-    name: Build backend
+    name: Build and run tests
     uses: ./.github/workflows/build.yml
     secrets: inherit
 
   build_docker:
-    name: Build docker
+    name: Build docker and publish
     needs: [ build_backend ]
-    uses: ./.github/workflows/publish.yml
+    uses: ./.github/workflows/build_docker.yml
     secrets: inherit
